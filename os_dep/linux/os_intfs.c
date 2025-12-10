@@ -16,6 +16,8 @@
 
 #include <drv_types.h>
 #include <hal_data.h>
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 8, 0))
+#define strlcpy strscpy
 
 MODULE_LICENSE("GPL");
 MODULE_DESCRIPTION("Realtek Wireless Lan Driver");
