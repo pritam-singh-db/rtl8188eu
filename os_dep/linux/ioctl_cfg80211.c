@@ -6780,7 +6780,7 @@ exit:
 	rtw_set_rtnl_lock_holder(dvobj, NULL);
 	return ret;
 }
-
+#if (LINUX_VERSION_CODE >= KERNEL_VERSION(3, 8, 0))
 #if (LINUX_VERSION_CODE >= KERNEL_VERSION(6, 0, 0))
 static int cfg80211_rtw_get_channel(struct wiphy *wiphy, struct wireless_dev *wdev, unsigned int link_id, struct cfg80211_chan_def *chandef){
 #else
