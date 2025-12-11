@@ -949,11 +949,12 @@ void halrf_cmn_info_init(void *dm_void, enum halrf_cmninfo_init cmn_info,
 	}
 }
 
-void halrf_cmn_info_hook(void *dm_void, enum halrf_cmninfo_hook cmn_info,
+void halrf_cmn_info_hook(void *dm_void, u32 u_cmn_info,
 			 void *value)
 {
 	struct dm_struct *dm = (struct dm_struct *)dm_void;
 	struct _hal_rf_ *rf = &dm->rf_table;
+	enum halrf_cmninfo_hook cmn_info = (enum halrf_cmninfo_hook)u_cmn_info;
 
 	switch (cmn_info) {
 	case HALRF_CMNINFO_CON_TX:
